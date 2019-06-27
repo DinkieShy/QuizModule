@@ -141,6 +141,30 @@ h5{
   box-sizing: border-box;
 }
 
+#upload{
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: lightgrey;
+  border-style: solid transparent;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+#saveload{
+  margin-bottom: 10px;
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: lightgrey;
+  border-style: solid transparent;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
 .btn{
   display: inline-block;
   margin-bottom: 0;

@@ -103,6 +103,9 @@ function removeAnswer(answerID){
       questions[question].answers.splice(i, 1);
     }
   }
+  if(getFeedback(answers[getAnswer(answerID)].linksTo) != -1){
+    feedbacks.splice(getFeedback(answers[getAnswer(answerID)].linksTo), 1);
+  }
   answers.splice(getAnswer(answerID), 1);
 }
 
@@ -210,7 +213,37 @@ function importFile(){
   fr.readAsText(files.item(0));
 }
 
+function saveSession(){
+  localStorage.setItem("questions", JSON.stringify(questions));
+  localStorage.setItem("results", JSON.stringify(results));
+  localStorage.setItem("answers", JSON.stringify(answers));
+  localStorage.setItem("feedbacks", JSON.stringify(feedbacks));
+}
+
+function loadSession(){
+  if(localStorage){
+    questions = JSON.parse(localStorage.getItem("questions"));
+    results = JSON.parse(localStorage.getItem("results"));
+    answers = JSON.parse(localStorage.getItem("answers"));
+    feedbacks = JSON.parse(localStorage.getItem("feedbacks"));
+    updateSelections();
+  }
+}
+
+function eraseSession(){
+  localStorage.clear();
+  questions = [];
+  results = [];
+  answers = [];
+  feedbacks = [];
+  updateSelections();
+}
+
 $(document).ready(function(){
+  loadSession();
+
+  $('#newQuizButton').click(eraseSession);
+
   $('#addQuestion').click(function(){
     var text = $('#newQuestionText')[0].value.trim();
     var description = $('#newQuestionDesc')[0].value.trim();
@@ -227,6 +260,7 @@ $(document).ready(function(){
       updateSelections();
       $('#newQuestionText')[0].value = "";
       $('#newQuestionDesc')[0].value = "";
+      saveSession();
     }
     else{
       $('#questionTextVal').removeClass("hidden");
@@ -252,6 +286,7 @@ $(document).ready(function(){
       $('#newResultText')[0].value = "";
       $('#newResultDesc')[0].value = "";
       $('#newResultShow')[0].checked = true;
+      saveSession();
     }
     else{
       $('#resultTextVal').removeClass("hidden");
@@ -292,6 +327,7 @@ $(document).ready(function(){
       $('#newAnswerFeed')[0].value = "";
       var answerID = addAnswer(text, display, linksTo, col, feedback);
       updateSelections();
+      saveSession();
     }
   });
 
