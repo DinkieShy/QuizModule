@@ -222,10 +222,18 @@ function saveSession(){
 
 function loadSession(){
   if(localStorage){
-    questions = JSON.parse(localStorage.getItem("questions"));
-    results = JSON.parse(localStorage.getItem("results"));
-    answers = JSON.parse(localStorage.getItem("answers"));
-    feedbacks = JSON.parse(localStorage.getItem("feedbacks"));
+    if(JSON.parse(localStorage.getItem("questions")) != undefined){
+      questions = JSON.parse(localStorage.getItem("questions"));
+    }
+    if(JSON.parse(localStorage.getItem("results")) != undefined){
+      results = JSON.parse(localStorage.getItem("results"));
+    }
+    if(JSON.parse(localStorage.getItem("answers")) != undefined){
+      answers = JSON.parse(localStorage.getItem("answers"));
+    }
+    if(JSON.parse(localStorage.getItem("feedbacks")) != undefined){
+      feedbacks = JSON.parse(localStorage.getItem("feedbacks"));
+    }
     updateSelections();
   }
 }
