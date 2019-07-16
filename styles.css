@@ -17,6 +17,7 @@ html{
 body{
   height: 100%;
   width: 100%;
+  background-color: #747678;
 }
 
 h2{
@@ -26,7 +27,8 @@ h2{
 }
 
 p{
-  background-color: #747678;
+  background-color: #047E8B;
+  color: white;
   border-style: solid transparent;
   border-radius: 5px;
   padding: 5px;
@@ -184,7 +186,7 @@ h5{
   color: white;
   border: 1px solid transparent;
   border-radius: 4px;
-  background-color: #047E8B;
+  background-color: #002147;
   background-image: none;
   box-shadow: none;
   text-shadow: none;
@@ -253,7 +255,7 @@ h5{
   box-sizing: border-box;
   margin: 10px;
   padding: 20px;
-  background-color: #002147;
+  background-color: white;
   overflow-y: scroll;
   color: white;
 }
@@ -266,7 +268,7 @@ h5{
   padding: 20px;
   border-style: solid transparent;
   border-radius: 10px;
-  background-color: #002147;
+  background-color: white;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -284,26 +286,27 @@ h5{
   max-width: 250px;
   word-wrap: normal;
   white-space: normal !important;
-  background-color: #047E8B;
+  background-color: #002147;
   color: white;
 }
 
 .questionDisplay{
   font-size: 1em;
   text-align: center;
-  color: white;
+  color: #002147;
 }
 
 #resultsArea{
   border-style: solid;
-  background-color: #002147;
-  color: white;
+  background-color: white;
+  color: #002147;
   border-width: 10px;
   border-radius: 20px;
   border-color: white;
   padding: 20px;
-  width: 100vw;
-  height: 100vh;
+  width: calc(100vw - 20px);
+  height: calc(100vh - 20px);
+  margin: 10px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
