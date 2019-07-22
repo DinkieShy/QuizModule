@@ -274,6 +274,7 @@ h5{
   flex-wrap: nowrap;
   justify-content: flex-start;
   overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 .answerButton{
@@ -288,9 +289,14 @@ h5{
 }
 
 .questionDisplay{
-  font-size: 1em;
+  font-size: 1.5em;
   text-align: center;
   color: #002147;
+}
+
+.questionDescription{
+  color: #002147;
+  background-color: transparent;
 }
 
 #resultsArea{
