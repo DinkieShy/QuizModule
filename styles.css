@@ -278,16 +278,13 @@ h5{
 
 .answerButton{
   margin: 10px;
+  height: calc(2em + 40px);
+  line-height: 1em;
   min-height: 10vh;
-  padding-left: 10px;
-  padding-right: 10px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  max-width: 300px;
-  word-wrap: normal;
-  white-space: normal !important;
   background-color: #002147;
   color: white;
+  white-space: pre-wrap;
+  overflow: visible;
 }
 
 .questionDisplay{
