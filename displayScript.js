@@ -133,7 +133,8 @@ function submit(){
   if(rCount + oCount + gCount > 0){
     score = (oCount + gCount*2) / (rCount + oCount + gCount);
   }
-  this.parent.postMessage(score, '*');
+  var customEvent = new CustomEvent('iframeMessage', {data: score});
+  this.parent.dispatchEvent(customEvent);
 }
 
 function showNext(event){
