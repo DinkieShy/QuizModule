@@ -129,22 +129,11 @@ function retry(){
 }
 
 function submit(){
-  if(endURL == "" || endURL == undefined){
-    if(inIframe()){
-      window.top.history.go(-1);
-    }
-    else{
-      window.history.go(-1);
-    }
+  var score = 0;
+  if(rCount + oCount + gCount > 0){
+    score = (oCount + gCount*2) / (rCount + oCount + gCount);
   }
-  else{
-    if(inIframe()){
-      window.top.location = endURL + `?Green=${gCount}&Orange=${oCount}&Red=${rCount}`;
-    }
-    else{
-      window.location = endURL + `?Green=${gCount}&Orange=${oCount}&Red=${rCount}`;
-    }
-  }
+  this.parent.postMessage(score, '*');
 }
 
 function showNext(event){
